@@ -5,7 +5,8 @@ california:
     attrs:
       width: '120'
       height: '150'
-  senate: 'https://www.senate.ca.gov/senators'
+  senate:
+    url: 'https://www.senate.ca.gov/senators'
     parse_tag: 'img'
     attrs:
       typeof: 'foaf:Image'
@@ -16,7 +17,8 @@ washington:
     parse_tag: 'img'
     attrs:
       style: 'width:60px;'
-  senate: 'http://leg.wa.gov/Senate/Senators/Pages/SenatePhotoResources.aspx'
+  senate:
+    url: 'http://leg.wa.gov/Senate/Senators/Pages/SenatePhotoResources.aspx'
     parse_tag: 'a'
 
 # oregon has no classes or ids on the img tag, so has to be filtered otherwise
@@ -24,15 +26,18 @@ oregon:
   house:
     url: 'https://www.oregonlegislature.gov/house/Pages/RepresentativesAll.aspx'
     parse_tag: 'img'
-  senate: 'https://www.oregonlegislature.gov/senate/Pages/SenatorsAll.aspx'
+  senate:
+    url: 'https://www.oregonlegislature.gov/senate/P
+    url: ages/SenatorsAll.aspx'
     parse_tag: 'img'
 
 # all on one page, no photos, link to bios etc.
 colorado:
   house:
-    url: 'http://leg.colorado.gov/legislators'
+    hurl: 'http://leg.colorado.gov/legislators'
     parse_tag: 'a'
-  senate: 'http://leg.colorado.gov/legislators'
+  senate:
+    url: 'http://leg.colorado.gov/legislators'
     parse_tag: 'a'
 
 # house page has links, but no class or id; for senate, link to page, lookup by district
@@ -40,14 +45,16 @@ florida:
   house:
     url: 'https://www.myfloridahouse.gov/Sections/Representatives/representatives.aspx'
     parse_tag: 'img'
-  senate: 'http://www.flsenate.gov/Senators/#Senators'
+  senate:
+    url: 'http://www.flsenate.gov/Senators/#Senators'
 
 # all in one, lookup by link, classes data-ga and data-pid
 iowa:
   house:
     url: 'https://www.legis.iowa.gov/legislators/informationOnLegislators/allLegislators'
     parse_tag: 'a'
-  senate: 'https://www.legis.iowa.gov/legislators/informationOnLegislators/allLegislators'
+  senate:
+    url: 'https://www.legis.iowa.gov/legislators/informationOnLegislators/allLegislators'
     parse_tag: 'a'
 
 wisconsin:

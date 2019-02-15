@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6d2fae5-84af-4a1e-a9de-6e38ad8257a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/state_data.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/state_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/state_legislatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/state_legislatures.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrape_windbags.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape_windbags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/state_data.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/state_data.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/state_data.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            <state relative-caret-position="714">
+              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -69,6 +64,7 @@
         <option value="$PROJECT_DIR$/data/state_legislatures.json" />
         <option value="$PROJECT_DIR$/state_scraper.py" />
         <option value="$PROJECT_DIR$/scrape_windbags.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/data/state_data.yml" />
       </list>
     </option>
@@ -107,7 +103,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550209777388" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550210192602" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -162,12 +158,12 @@
       <workItem from="1549250008613" duration="1348000" />
       <workItem from="1550027981507" duration="1209000" />
       <workItem from="1550031864589" duration="6443000" />
-      <workItem from="1550111467525" duration="18916000" />
+      <workItem from="1550111467525" duration="19328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28893000" />
+    <option name="totallyTimeSpent" value="29305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1292" height="688" extended-state="0" />
@@ -246,10 +242,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/state_data.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="714">
+          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
         </state>
       </provider>
     </entry>

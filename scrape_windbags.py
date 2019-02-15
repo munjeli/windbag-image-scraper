@@ -39,8 +39,8 @@ def fetch_top_list(url, tag, attrs=None):
 
 def scrape_california():
     sts = state_scraper.StateScraper()
-    cali_data = sts.fetch_state_data('california')
-    house_photos = fetch_top_list(cali_data)
+    cali = sts.fetch_state_data('california')
+    house_photos = fetch_top_list(cali['house']['url'], cali['house']['attrs'])
     for hp in house_photos:
         file_name = hp['src'].split('/')[-1]
         himg = requests.get(hp['src'])
