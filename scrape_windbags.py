@@ -2,6 +2,8 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 import json
+import sys
+import state_scraper
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -23,14 +25,22 @@ def scrape_state_sites():
     open('data/state_legislatures.json', 'w').write(json.dumps(state_links, indent=4))
 
 
-def scrape_california():
-    house_link = 'https://www.assembly.ca.gov/assemblymembers'
-    senate_link = 'https://www.senate.ca.gov/senators'
-    house_page = requests.get(house_link)
-    senate_page = requests.get(senate_link)
+def fetch_top_list(url, tag, attrs=None):
+    """
+    use a link to fetch a list of image links
+    :param link:
+    :param attrs:
+    :return:
+    """
+    state_page = requests.get(url)
+    soup = BeautifulSoup(state_page.content, 'html.parser')
+    return soup.find_all(tag, attrs=attrs)
 
-    house_soup = BeautifulSoup(house_page.content, 'html.parser')
-    house_photos = house_soup.find_all('img', attrs={'width': '120', 'height': '150'})
+
+def scrape_california():
+    sts = state_scraper.StateScraper()
+    cali_data = sts.fetch_state_data('california')
+    house_photos = fetch_top_list(cali_data)
     for hp in house_photos:
         file_name = hp['src'].split('/')[-1]
         himg = requests.get(hp['src'])
@@ -52,15 +62,15 @@ def scrape_washington():
     house_page = requests.get(house_link)
     senate_page = requests.get(senate_link)
 
-    # house_soup = BeautifulSoup(house_page.content, 'html.parser')
-    # house_photos = house_soup.find_all('img', attrs={'style': 'width:60px;'})
-    # house_purl = 'http://leg.wa.gov/House/Representatives/PublishingImages/'
-    # for hp in house_photos:
-    #     try:
-    #         himg = requests.get("{}{}.jpg".format(house_purl, hp['alt']))
-    #         open('data/washington/house/{}.jpg'.format(hp['alt']), 'wb').write(himg.content)
-    #     except:
-    #         pass
+    house_soup = BeautifulSoup(house_page.content, 'html.parser')
+    house_photos = house_soup.find_all('img', attrs={'style': 'width:60px;'})
+    house_purl = 'http://leg.wa.gov/House/Representatives/PublishingImages/'
+    for hp in house_photos:
+        try:
+            himg = requests.get("{}{}.jpg".format(house_purl, hp['alt']))
+            open('data/washington/house/{}.jpg'.format(hp['alt']), 'wb').write(himg.content)
+        except:
+            pass
 
     senate_soup = BeautifulSoup(senate_page.content, 'html.parser')
     senate_photos = senate_soup.find_all('a')
@@ -76,7 +86,64 @@ def scrape_washington():
             logger.debug(e)
             pass
 
+
+def scrape_oregon():
+    logger.debug('oregon')
+
+
+def scrape_florida():
+    logger.debug('florida')
+
+
+def scrape_colorado():
+    logger.debug('colorado')
+
+
+def scrape_iowa():
+    logger.debug('iowa')
+
+
+def scrape_illinois():
+    logger.debug('illinois')
+
+
+def scrape_michigan():
+    logger.debug('michigan')
+
+
+def scrape_wisconsin():
+    logger.debug('wisconsin')
+
+
+def scrape_georgia():
+    logger.debug('georgia')
+
+
 if __name__ == '__main__':
-    # scrape_state_sites()
-    # scrape_california()
-    scrape_washington()
+    try:
+        state = sys.argv[1]
+    except Exception as e:
+        logger.warning(e)
+
+    if state == 'california':
+        scrape_california()
+    elif state == 'washington':
+        scrape_washington()
+    elif state == 'oregon':
+        scrape_oregon()
+    elif state == 'florida':
+        scrape_florida()
+    elif state == 'colorado':
+        scrape_colorado()
+    elif state == 'iowa':
+        scrape_iowa()
+    elif state == 'illinois':
+        scrape_illinois()
+    elif state == 'michigan':
+        scrape_michigan()
+    elif state == 'wisconsin':
+        scrape_wisconsin()
+    elif state == 'georgia':
+        scrape_georgia()
+    else:
+        logger.info('Sorry, that state is not yet supported.')

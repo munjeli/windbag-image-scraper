@@ -1,0 +1,74 @@
+california:
+  house:
+    url: 'https://www.assembly.ca.gov/assemblymembers'
+    parse_tag: 'img'
+    attrs:
+      width: '120'
+      height: '150'
+  senate: 'https://www.senate.ca.gov/senators'
+    parse_tag: 'img'
+    attrs:
+      typeof: 'foaf:Image'
+
+washington:
+  house:
+    url: 'http://leg.wa.gov/House/Pages/MemberPortraits.aspx'
+    parse_tag: 'img'
+    attrs:
+      style: 'width:60px;'
+  senate: 'http://leg.wa.gov/Senate/Senators/Pages/SenatePhotoResources.aspx'
+    parse_tag: 'a'
+
+# oregon has no classes or ids on the img tag, so has to be filtered otherwise
+oregon:
+  house:
+    url: 'https://www.oregonlegislature.gov/house/Pages/RepresentativesAll.aspx'
+    parse_tag: 'img'
+  senate: 'https://www.oregonlegislature.gov/senate/Pages/SenatorsAll.aspx'
+    parse_tag: 'img'
+
+# all on one page, no photos, link to bios etc.
+colorado:
+  house:
+    url: 'http://leg.colorado.gov/legislators'
+    parse_tag: 'a'
+  senate: 'http://leg.colorado.gov/legislators'
+    parse_tag: 'a'
+
+# house page has links, but no class or id; for senate, link to page, lookup by district
+florida:
+  house:
+    url: 'https://www.myfloridahouse.gov/Sections/Representatives/representatives.aspx'
+    parse_tag: 'img'
+  senate: 'http://www.flsenate.gov/Senators/#Senators'
+
+# all in one, lookup by link, classes data-ga and data-pid
+iowa:
+  house:
+    url: 'https://www.legis.iowa.gov/legislators/informationOnLegislators/allLegislators'
+    parse_tag: 'a'
+  senate: 'https://www.legis.iowa.gov/legislators/informationOnLegislators/allLegislators'
+    parse_tag: 'a'
+
+wisconsin:
+  house:
+  senate:
+
+michigan:
+  house:
+  senate:
+
+illinois:
+  house:
+  senate:
+
+# all in one
+district_of_columbia:
+  house:
+    url: 'http://dccouncil.us/councilmembers/'
+  senate:
+    url: 'http://dccouncil.us/councilmembers/'
+
+georgia:
+  house:
+  senate:
